@@ -1,0 +1,302 @@
+/* 
+    Document   : style
+    Created on : 2012-7-5, 22:33:10
+    Author     : jason
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+body{
+    background: #444;
+    font-family: 'Microsoft Yahei'
+}
+.page{
+    border-bottom: 1px #777 dashed;
+    padding: 20px;
+}
+
+#page_container{
+    width: 1100px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+#page_container_left{
+    float: left;
+    width: 100px;
+}
+
+#page_container_middle{
+    margin-left: 100px;
+    width:900px;
+    background: #fff;
+    box-shadow : 0px 0px 5px #333;
+}
+
+
+#page_container_right{
+    float: right;
+    width: 100px;
+}
+
+#site_name{
+    font-size: 40px;
+    font-weight: bold;
+    color:#bbb;
+    line-height: 35px;
+}
+
+.catagory{
+    display: inline-block;
+    padding: 5px 10px;
+    width: 80px;
+    box-shadow : 0px 0px 4px #999;
+    text-align: center;
+}
+.catagory.selected{
+   background: #49AFCD; 
+}
+.catagory:hover{
+    background: #49AFCD;
+    -webkit-transition: .5s background;
+    -webkit-transition: .5s color;
+}
+
+#catagories_con .catagory{
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.input-large{
+    padding: 4px;
+}
+
+#nav{
+    position: fixed;
+    margin-left: 80px;
+    bottom: 20px;
+}
+
+#nav a{
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-bottom:1px #fff solid; 
+    background: #aaa;
+    font-size: 30px;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    
+}
+#nav a.active{
+    background: #4bb1cf;
+}
+
+.books_con .book{
+    float:left;
+}
+
+.book{
+    padding: 15px;
+    margin: 1px;
+    width: 220px;
+    background: #eee;
+}
+
+.book-cover{
+    float: left;
+    background: url('../img/icon_book.png');
+    height: 143px;
+    width: 108px;
+    margin: 0px 5px 10px 0px;
+}
+
+.book-detail-item{
+    display: block;
+    margin-bottom: 4px;
+    color: #666;
+}
+
+.book-name{
+    font-size: 20px;
+    font-weight: bold;
+    clear: both;
+}
+
+.note{
+    clear: both;
+    padding: 10px;
+    margin: 10px 0px;
+    background: #eee;
+}
+
+.note-meta{
+    border-bottom: 1px #ccc dashed;
+    padding: 4px 0px;
+    color:#666
+}
+
+.note-meta-item{
+    display: inline-block;
+    padding: 2px 15px 2px 0px;
+}
+
+.note-preview{
+    line-height: 2;
+}
+
+.note-detail-meta{
+    float:right;
+    font-size:16px;
+    font-weight: bold;
+}
+
+#page_note_detail .note-book{
+    float:left;
+    margin-bottom: 20px;
+}
+
+#page_note_detail .note{
+    font-size:16px;
+}
+
+.note-quote{
+    margin: 20px 0px;
+     font-style: italic;
+}
+
+.note-quote img{
+    vertical-align: top;
+    margin: 0px 4px;
+}
+
+#page_note_create .note{
+    background: #fff;
+}
+
+#page_note_create .note-meta-item .editable-item{
+    background: #eee;
+    padding-left: 10px;
+    margin-right:10px;
+    display: inline-block;
+}
+
+#page_note_create .note-meta-item .editable-item input{
+    width: 50px;
+}
+.editable-item .btn{
+    padding: 1px 5px;
+}
+
+
+#page_note_create .note-meta-item .editable-icons,.editable-items{
+    display : inline-block;
+}
+
+#page_note_create span{
+    margin-top: 3px;
+}
+
+.note-textarea{
+    margin-top: 10px;
+}
+
+.note-textarea textarea{
+    width: 100%;
+    min-height: 400px;
+}
+
+
+
+.editable-item .editable-control{
+    display: none;
+}
+.editable-item .editable-content{
+    height: 22px;
+    line-height: 22px;
+    display: auto;
+}
+
+.edit .editable-control{
+    display: inline-block;
+}
+.edit .editable-content{
+    display: none;
+}
+
+.editable-item .editable-icons{
+    display: inline-block
+}
+.editable-item .editable-icons .icon{
+    display: none;
+}
+
+.editable-item.enable_edit .editable-icons .icon-edit{
+    display: inline-block;
+}
+.editable-item.enable_delete .editable-icons .icon-remove{
+    display: inline-block;
+}
+
+
+#book_create{
+    width: 210px;
+}
+
+#book-name-related{
+    height: 200px;
+    width: 100%;
+}
+
+#book-name-related .active{
+    border: 1px #999 solid;
+    margin: 5px 0px;
+}
+
+#book-name-related .item{
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 0px 0px 5px;
+    background: #eee;
+    border-top: 1px #fff solid; 
+}
+
+#book-related-controllers{
+    display: none;
+    background: #eee;
+    padding: 2px;
+}
+
+#book-related-controllers>span{
+    display: inline-block;
+    width: 32%;
+}
+#book-related-controllers>span.hide{
+    visibility:hidden;
+}
+
+#book-create-result .book{
+    width: 500px;
+}
+
+
+.test .component{
+    margin: 10px;
+    -moz-box-shadow: 0px 0px 3px #aaa;
+    padding: 10px;
+    min-height: 50px;
+    background: #fff;
+}
+
+.test .test{
+    -webkit-transition: width 2s;
+}

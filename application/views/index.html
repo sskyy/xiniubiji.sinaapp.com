@@ -1,0 +1,217 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/base.css">
+
+    </head>
+    <body>
+        <div id="page_container">
+            <div id="page_container_left">
+
+            </div>
+
+            <div id="page_container_middle" class="container-fluid">
+                <div id="page_index" class="page">
+                    <div id="site_name">读书笔记</div>
+
+
+                    <div class="f30  mb15 mt50">
+                        你可以
+                    </div>
+                    <div id="search_con" class=" bc">
+                        <input type="text" class="input-large"/>
+                        <a class="btn"><span class="icon-search"></span></a>
+                    </div>
+
+                    <div class="f30 mb15 mt50">
+                        或者
+                    </div>
+                    <div id="catagories_con" class=" bc ">
+
+                    </div>
+
+                    <div class="f30  mb15 mt50">
+                        再或者
+                    </div>
+                    <div class=" bc">
+                        <a class="btn btn-large btn-info">写笔记</a>
+                    </div>
+                </div>
+
+                <div id="page_catagory" class="page">
+                    <div id="books_con" class="books_con">
+
+
+                    </div>
+                    <div class="cb"></div>
+                </div>
+
+                <div id="page_note_list" class="page">
+                    <div class="note-book">
+
+                    </div>
+                    <div id ="notes_list" class="notes_list">
+
+                    </div>
+
+                </div>
+                <div id="page_note_detail" class="page">
+                    <div class="note-book">
+                        
+                    </div>
+                    <div class="note-detail-meta">
+                        <div class="note-meta-item note-author">朱元璋</div>
+                        <div class="note-meta-item note-quantity">1万3千字</div>
+                        <div class="note-meta-item note-last-complete">已完成</div>
+                        <div class="note-meta-item note-last-update">最后编辑于 2012.7.12</div>
+                    </div>
+                    <div id="note-detail-list">
+                        
+                    </div>
+
+                </div>
+                <div id="page_note_create" class="page">
+
+                    <div id="book-create-con">
+                        <div id="book_create" class="fl">
+                            <div class="book-name-con">
+                                <input type="text" id="book-name"/>
+                            </div>
+                            <div id="book-name-related-con">
+                                <div id="book-name-related"></div>
+                                <div id="book-related-controllers">
+                                    <span id="related_book_prev_page">上一页</span>
+                                    <span>
+                                        <span id="related_book_current_page"></span>
+                                        /<span id="related_book_total_pages"></span>
+                                    </span>
+                                    <span id="related_book_next_page">下一页</span>
+                                </div>
+                                <div class="mt20">
+                                    <a class="btn" id="create-book-btn" event-click="add_book">添加新书籍数据</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="book-create-result" class="fr">
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="note cb" id="param-create-con">
+                        <div class="note-meta">
+                            <div class="note-meta-item note-param"></div>
+                            <div class="note-meta-item note-sub-params"></div>
+                            <div class="note-meta-item note-add-sub-param"></div>
+                            <div class="note-meta-item note-page"></div>
+                            <div class="note-meta-item note-line"></div>
+                        </div>
+                        <div class="note-textarea">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+
+                    <div class="fr btn">完成</div>
+
+                </div>
+
+            </div>
+
+            <div id="page_container_right">
+                <div id="nav">
+                    <div><a target_id="page_index">1</a></div>
+                    <div><a target_id="page_catagory">2</a></div>
+                    <div><a target_id="page_note_list">3</a></div>
+                    <div><a target_id="page_note_detail">4</a></div>
+                    <div><a target_id="page_note_create">5</a></div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/sea.js" data-main="./js/init"></script>
+
+        <script type="text/template" id="tpl-book_type">
+            <div class="catagory"><%=name%></div>
+        </script>
+
+        <script type="text/template" id="tpl-book">
+            <div class="book">
+                <div class="book-cover"></div>
+                <div class="book-detail">
+                    <span class="book-detail-item book-author"><%=author%></span>
+                    <span class="book-detail-item book-publisher"><%=publisher%></span>
+                    <span class="book-detail-item book-note-quantity"><%=notes%></span>
+                </div>
+                <div class="book-name"><%=name%></div>
+            </div>
+        </script>
+
+        <script type="text/template" id="tpl-note">
+            <div class="note">
+                <div class="note-meta">
+                    <div class="note-meta-item note-author">朱元璋</div>
+                    <div class="note-meta-item note-quantity">1万3千字</div>
+                    <div class="note-meta-item note-last-complete">已完成</div>
+                    <div class="note-meta-item note-last-update">最后编辑于 2012.7.12</div>
+                </div>
+                <div class="note-preview">
+                    Brute-Force Debugging
+                    1. 对崩溃代码的设计和编码进行彻底检查
+                    2. 抛弃有问题的代码，从头开始设计和编程
+                    3. 抛弃整个程序，从头开始设计和编程
+                    4. 编译代码时生成全部的调试信息
+                    5. 在最为苛刻的警告级别中编译代码，不放过任何一个细微的编译器警告
+                    6. 全面执行单元测试，并将新的代码隔离起来单独测试
+                    7. 开发自动化测试工具，通宵达旦的对代码进行测试
+                    8. 在调试器中手动的遍历一个大的循环，直到发现错误条件
+                    9. 在代码中加入打印、显示和其他日志记录语句
+                    10. 用另一个不同的编译器来编译代码
+                    11. 在另一个不同的环境里编译和运行程序
+                    12. 在代码运行不正确的时候，使用能够产生警告信息的特殊库或者执行环境来链接和运行代码
+                    13. 复制最终用户的完整系统配置信息
+                    14. 将新的代码分小段进行集成，对每段集成的代码段进行完整的测试
+
+                    在使用“快速肮脏调试法”的时候设置一个时间上限。如果确定有能够解决问题的蛮力技术——如上所列，那么没必要花上两小时调试原本只用三十分钟就能写出来的代码。
+                </div>
+            </div>
+        </script>
+        <script id="tpl-editable-item-container" type="text/template">
+            <div class="editable-item">
+                <div class="editable-content editable-trigger-edit">
+                    <div class="editable-items"></div>
+                    <div class="editable-icons">
+                        <span class="<%=icons.edit%> icon"></span>
+                        <span class="<%=icons.delete%> icon editable-trigger-delete"></span>
+                    </div>
+                </div>
+                <div class="editable-control">
+                    <% 
+                        for( var item_name in data ){
+                     %>
+                     <input type="text" value="<%=data[item_name]%>" id="<%=input_ids[item_name]%>"/>
+                     <%
+                        }
+                    %>
+                    <a class="btn btn-small editable-trigger-edit-done">
+                        <div class="icon-ok"></div>
+                    </a>
+                </div>
+            </div>
+
+        </script>
+        
+        <script type="text/template" id="tpl-book-simple">
+            <div class="item">
+                <%=name%> - <%=author%>
+            </div>
+        </script>
+    </body>
+</html>
